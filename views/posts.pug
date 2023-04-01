@@ -1,0 +1,16 @@
+extends layout.pug 
+
+block content 
+    .wrapper 
+       
+        h1 All Posts
+
+        if deleted 
+            p.error Deleted
+        
+        each post in posts 
+            .post-wrapper
+                a.post(href=`/posts/${ post.id }`) #{post.title}
+                a.delete(href=`/posts/${ post.id }/delete`)  delete
+
+        

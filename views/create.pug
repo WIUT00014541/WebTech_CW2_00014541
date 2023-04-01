@@ -1,0 +1,21 @@
+extends layout.pug 
+
+block content 
+    .wrapper 
+        .create-block
+            h1 Type a new Post!
+
+            if error 
+                p.error Error was ocured
+
+            if success  
+                p.success Your post added to blog
+
+            form.form(action='/create' method='POST')
+                label Title 
+                input.input(type='text' name='title')
+
+                label Description 
+                textarea.input(type='text' name='description')
+
+                button.btn Make a Post
